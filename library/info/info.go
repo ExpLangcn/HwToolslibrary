@@ -1,7 +1,7 @@
 package info
 
 import (
-	"WanLi/pkg/library/httpclient"
+	"github.com/ExpLangcn/HwToolslibrary/library/httpclient"
 )
 
 type POC struct {

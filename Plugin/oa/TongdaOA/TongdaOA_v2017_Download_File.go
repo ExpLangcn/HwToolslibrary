@@ -1,9 +1,9 @@
 package main
 
 import (
-	"HwToolslibrary/library/httpclient"
-	"HwToolslibrary/library/info"
 	"errors"
+	"github.com/ExpLangcn/HwToolslibrary/library/httpclient"
+	"github.com/ExpLangcn/HwToolslibrary/library/info"
 	"net/http"
 	"strings"
 )
@@ -17,7 +17,7 @@ func init() {
 			Name:     "通达OA v2017 任意文件下载漏洞",
 			Author:   "ExpLang",
 			Describe: "通达OA v2017 文件存在任意文件下载漏洞，攻击者通过漏洞可以读取服务器敏感文件",
-			Date:     "2023-09-26",
+			Date:     "2023-09-27",
 			Tags:     []string{"通达OA", "TongdaOA", "Download File"},
 			Level:    "high",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2017%20video_file.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E.html"},

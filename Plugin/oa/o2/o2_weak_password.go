@@ -1,10 +1,10 @@
 package main
 
 import (
-	"HwToolslibrary/library/httpclient"
-	"HwToolslibrary/library/info"
 	"errors"
 	"fmt"
+	"github.com/ExpLangcn/HwToolslibrary/library/httpclient"
+	"github.com/ExpLangcn/HwToolslibrary/library/info"
 	"net/http"
 )
 
