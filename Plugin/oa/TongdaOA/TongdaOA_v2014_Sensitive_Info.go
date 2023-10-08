@@ -14,11 +14,11 @@ var Httprecord = make(map[*httpclient.RequestOptions]*httpclient.Response) // �
 func init() {
 	POC = info.POC{ // 初始化POC信息
 		Info: info.POCInfo{
-			Name:     "通达OA v2014 敏感信息泄漏漏洞",
+			Name:     "通达OA敏感信息泄漏漏洞",
 			Author:   "ExpLang",
-			Describe: "通达OA v2014 存在信息泄漏漏洞，攻击者通过漏洞可以获取敏感信息，进一步攻击。",
+			Describe: "通达OA存在信息泄漏漏洞，攻击者通过漏洞可以获取敏感信息，进一步攻击。",
 			Date:     "2023-09-26",
-			Tags:     []string{"通达OA", "TongdaOA", "Sensitive Info"},
+			Tags:     []string{"通达OA", "TongdaOA", "Sensitive Info", "敏感信息"},
 			Level:    "medium",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2014%20get_contactlist.php%20%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E6%BC%8F%E6%B4%9E.html"},
 		},

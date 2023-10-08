@@ -15,11 +15,11 @@ var Httprecord = make(map[*httpclient.RequestOptions]*httpclient.Response) // �
 func init() {
 	POC = info.POC{ // 初始化POC信息
 		Info: info.POCInfo{
-			Name:     "通达OA v2017 任意文件上传漏洞",
+			Name:     "通达OA任意文件上传漏洞",
 			Author:   "ExpLang",
-			Describe: "通达OA v2017 action_upload.php 文件过滤不足且无需后台权限，导致任意文件上传漏洞\n\n#",
+			Describe: "通达OA_action_upload.php_文件过滤不足且无需后台权限，导致任意文件上传漏洞",
 			Date:     "2023-09-26",
-			Tags:     []string{"通达OA", "TongdaOA", "Download File"},
+			Tags:     []string{"通达OA", "TongdaOA", "File Upload", "任意文件上传"},
 			Level:    "high",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2017%20action_upload.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.html"},
 		},
