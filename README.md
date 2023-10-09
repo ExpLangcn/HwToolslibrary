@@ -63,7 +63,7 @@ func Start(Target string, ProxyURL string) (bool, error) { // 调用试例 必�
 ```
 
 ## 使用 AI 自动生成POC 插件
-* 打开类似于 ChatGPT 的对话框，将库内的所有.go后缀的文件内容逐个发给 GPT。
+* 打开类似于 ChatGPT 的对话框，将库内的部分插件逐个发给 GPT，以及library/info/info.go中的内容发送给GPT。
 * 当全部发送后将你需要生成的 POC 漏洞信息发送给 GPT 并在结尾说明判断漏洞存在的逻辑即可。
 
 **注意：建议参考网络上大部分漏洞文库的格式来生成 POC，也可直接发送请求包并告知如何判断漏洞存在即可。**
