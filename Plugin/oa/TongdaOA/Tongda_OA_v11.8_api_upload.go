@@ -18,7 +18,7 @@ func init() {
 			Author:   "ExpLang",
 			Describe: "通达OA_v11.8_api.ali_存在任意文件上传漏洞，攻击者通过漏可以上传恶意文件控制服务器",
 			Date:     "2023-09-26",
-			Tags:     []string{"通达OA", "TongdaOA", "File Upload", "任意文件上传"},
+			Tags:     []string{"通达OA", "TongdaOA", "File_Upload", "任意文件上传"},
 			Level:    "high",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v11.8%20api.ali.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.html"},
 		},

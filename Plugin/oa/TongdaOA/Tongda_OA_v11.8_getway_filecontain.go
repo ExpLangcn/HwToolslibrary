@@ -19,7 +19,7 @@ func init() {
 			Author:   "ExpLang",
 			Describe: "通达OA_v11.8_getway_存在文件包含漏洞，攻击者通过发送恶意请求包含日志文件导致任意文件写入漏洞",
 			Date:     "2023-09-26",
-			Tags:     []string{"通达OA", "TongdaOA", "File contains", "文件包含"},
+			Tags:     []string{"通达OA", "TongdaOA", "File_Contains", "文件包含"},
 			Level:    "high",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v11.8%20getway.php%20%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E.html"},
 		},

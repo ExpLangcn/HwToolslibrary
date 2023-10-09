@@ -18,7 +18,7 @@ func init() {
 			Author:   "ExpLang",
 			Describe: "通达OA存在信息泄漏漏洞，攻击者通过漏洞可以获取敏感信息，进一步攻击。",
 			Date:     "2023-09-26",
-			Tags:     []string{"通达OA", "TongdaOA", "Sensitive Info", "敏感信息"},
+			Tags:     []string{"通达OA", "TongdaOA", "Sensitive_Info", "敏感信息"},
 			Level:    "medium",
 			Link:     []string{"https://peiqi.h-k.pw/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2014%20get_contactlist.php%20%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E6%BC%8F%E6%B4%9E.html"},
 		},
